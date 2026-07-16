@@ -15,13 +15,12 @@
     <!-- Cabeçalho -->
     <header>
         <div id="cabecalho">
-            <a href="#topo"><div class="logo"></div></a>
+            <a href="#banner"><div class="logo"></div></a>
             <nav class="menu-site menu-desktop">
                 
                 <a href="#integrantes">Integrantes</a>
                 <a href="#sobre">Sobre</a>
-                <a href="galeria.html">Galeria</a>
-                <a href="videos.html">Videos</a>
+                
                 <a href="#contratar">Links</a>
             </nav>
             
@@ -39,14 +38,10 @@
         </div>
     </header>
 
-    <!-- Carrossel -->
-    <section id="topo" class="slider-container">
-
-        <div class="slide active">
-            <img id="foto_logo" class="foto_carrossel" src="img/banner.png" alt="Banner da Crowitch">
-        </div>
-
-    </section>
+    <!-- Banner Inicial -->
+    <div id="banner">
+        <img src="img/banner.png" alt="">
+    </div>
 
     <!-- Integrantes -->
     <section id="integrantes" class="integrantes-secao">
@@ -127,30 +122,127 @@
             
     </section>
 
-    <!-- Api Instagram -->
-    <section id="insta" class="instagram-feed">
-    
-        <h2>Nosso Instagram</h2>
-    
-        <div class="instagram-gallery">
-    
-            <div class="post-item">
-                <blockquote class="instagram-media" data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/reel/DY-pXwhSeFk/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14">
-                    <div>
-                        <a href="https://www.instagram.com/reel/DY-pXwhSeFk/?utm_source=ig_embed&amp;utm_campaign=loading"
-                            target="_blank">
-                            Uma publicação compartilhada por Crowitch (@crowitchofc)
-                        </a>
-                    </div>
-                </blockquote>
-            </div>
-    
-            
-    
+    <!-- Carrossel -->
+    <section id="topo" class="slider-container">
+
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="img/banner1.png" alt="Banner da Crowitch">
         </div>
+
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="img/banner2.png" alt="Banner da Crowitch">
+        </div>
+        
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="img/banner3.png" alt="Banner da Crowitch">
+        </div>
+
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="img/banner4.png" alt="Banner da Crowitch">
+        </div>
+
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="img/banner5.png" alt="Banner da Crowitch">
+        </div>
+
+    </section>
+
+    <!-- Videos -->
+    <section id="video">
+
+        <div class="galeria-video" style="display: flex;flex-direction: column; align-items: center; gap: 10px;" >
+            
+            <video width="90%" height="auto" controls preload="metadata" poster="">
+                <source src="vid/1.mp4" type="video/mp4"> 
+            </video>
+
+            <video width="90%" height="auto" controls preload="metadata" poster="">
+                <source src="vid/2.mp4" type="video/mp4"> 
+            </video>
+
+            <video width="90%" height="auto" controls preload="metadata" poster="">
+                <source src="vid/3.mp4" type="video/mp4"> 
+            </video>
+
+            <video width="90%" height="auto" controls preload="metadata" poster="">
+                <source src="vid/4.mp4" type="video/mp4"> 
+            </video>
+            
+            
+        </div>
+
+    </section>
+
     
+    <!-- Player de musica -->
+    <section id="previu">
+
+        <div class="player-container">
+            <audio class="audio-preview" src="aud/cura.mp3"></audio>
+            <div class="album-art">
+                <img src="img/capa1.jpeg" alt="Capa 1">
+            </div>
+            <div class="track-title">A cura</div>
+            <div class="band-name">Nome da Sua Banda</div>
+            
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-display">
+                <span class="current-time">0:00</span>
+                <span class="duration">0:00</span>
+            </div>
+            <div class="controls">
+                <button class="btn-play">
+                    <i class="fas fa-play play-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="player-container">
+            <audio class="audio-preview" src="aud/olhos.mp3"></audio>
+            <div class="album-art">
+                <img src="img/capa2.jpeg" alt="Capa 2">
+            </div>
+            <div class="track-title">Olhos brancos</div>
+            <div class="band-name">Nome da Sua Banda</div>
+            
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-display">
+                <span class="current-time">0:00</span>
+                <span class="duration">0:00</span>
+            </div>
+            <div class="controls">
+                <button class="btn-play">
+                    <i class="fas fa-play play-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="player-container">
+            <audio class="audio-preview" src="aud/vida.mp3"></audio>
+            <div class="album-art">
+                <img src="img/capa3.jpeg" alt="Capa 3">
+            </div>
+            <div class="track-title">Vida de louco</div>
+            <div class="band-name">Nome da Sua Banda</div>
+            
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-display">
+                <span class="current-time">0:00</span>
+                <span class="duration">0:00</span>
+            </div>
+            <div class="controls">
+                <button class="btn-play">
+                    <i class="fas fa-play play-icon"></i>
+                </button>
+            </div>
+        </div>
+
     </section>
 
     <!-- Contratar -->
@@ -190,9 +282,6 @@
         <p id="texto_rodape">&copy; 2026 Crowitch. Todos os direitos reservados.</p>
 
     </footer>
-
-    <!-- API Instagram -->
-    <script async src="//www.instagram.com/embed.js"></script>
 
     <!-- Menu Hamburguer -->
     <script>
@@ -240,6 +329,156 @@
             // Define um intervalo para trocar os slides a cada 5 segundos (5000ms)
             setInterval(nextSlide, 5000);
         });
+    </script>
+
+    <!-- Player -->
+     <!-- <script>
+        const audio = document.getElementById('audio-preview');
+        const btnPlay = document.getElementById('btn-play');
+        const playIcon = document.getElementById('play-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        // Play e Pause
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            } else {
+                audio.pause();
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            }
+        }
+
+        btnPlay.addEventListener('click', togglePlay);
+
+        // Atualizar barra de progresso e tempo decorrido
+        audio.addEventListener('timeupdate', () => {
+            const { duration, currentTime } = audio;
+            if (duration) {
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+
+                // Atualiza o tempo atual formatado (mm:ss)
+                currentTimeEl.innerText = formatTime(currentTime);
+            }
+        });
+
+        // Carregar a duração total assim que o arquivo for lido
+        audio.addEventListener('loadedmetadata', () => {
+            durationEl.innerText = formatTime(audio.duration);
+        });
+
+        // Permitir clicar na barra para adiantar ou voltar a música
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            if (duration) {
+                audio.currentTime = (clickX / width) * duration;
+            }
+        });
+
+        // Reiniciar ícone quando a música acabar
+        audio.addEventListener('ended', () => {
+            playIcon.classList.remove('fa-pause');
+            playIcon.classList.add('fa-play');
+            progressBar.style.width = '0%';
+            currentTimeEl.innerText = '0:00';
+        });
+
+        // Função auxiliar para formatar segundos em mm:ss
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+    </script> -->
+
+    <script>
+        // Seleciona todos os players da página
+        const players = document.querySelectorAll('.player-container');
+
+        players.forEach(player => {
+            const audio = player.querySelector('.audio-preview');
+            const btnPlay = player.querySelector('.btn-play');
+            const playIcon = player.querySelector('.play-icon');
+            const progressBar = player.querySelector('.progress-bar');
+            const progressContainer = player.querySelector('.progress-container');
+            const currentTimeEl = player.querySelector('.current-time');
+            const durationEl = player.querySelector('.duration');
+
+            // Função para pausar todos os outros players ativos na página
+            function pauseAllOthers() {
+                players.forEach(otherPlayer => {
+                    if (otherPlayer !== player) {
+                        const otherAudio = otherPlayer.querySelector('.audio-preview');
+                        const otherIcon = otherPlayer.querySelector('.play-icon');
+                        otherAudio.pause();
+                        otherIcon.classList.remove('fa-pause');
+                        otherIcon.classList.add('fa-play');
+                    }
+                });
+            }
+
+            // Click do Play/Pause
+            btnPlay.addEventListener('click', () => {
+                if (audio.paused) {
+                    pauseAllOthers(); // Pausa as outras antes de dar play
+                    audio.play();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-pause');
+                } else {
+                    audio.pause();
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
+                }
+            });
+
+            // Atualiza tempo e progresso
+            audio.addEventListener('timeupdate', () => {
+                const { duration, currentTime } = audio;
+                if (duration) {
+                    const progressPercent = (currentTime / duration) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    currentTimeEl.innerText = formatTime(currentTime);
+                }
+            });
+
+            // Carrega a duração assim que o arquivo é lido
+            audio.addEventListener('loadedmetadata', () => {
+                durationEl.innerText = formatTime(audio.duration);
+            });
+
+            // Clique na barra de progresso
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                if (duration) {
+                    audio.currentTime = (clickX / width) * duration;
+                }
+            });
+
+            // Reseta quando a música acaba
+            audio.addEventListener('ended', () => {
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                progressBar.style.width = '0%';
+                currentTimeEl.innerText = '0:00';
+            });
+        });
+
+        // Função para formatar o tempo (mm:ss)
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
     </script>
 
 </body>
