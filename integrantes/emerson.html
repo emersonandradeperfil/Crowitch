@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/integrantes.css">
+    <link rel="icon" href="../img/flavicon.png" />
+    <title>Crowitch</title>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div id="cabecalho">
+            <a href="../index.html"><div class="logo"></div></a>
+            <nav class="menu-site menu-desktop">
+                
+                <a href="../index.html#integrantes">Integrantes</a>
+                
+            </nav>
+            
+            <button class="menu-hamburguer" aria-label="Abrir Menu">
+                &#9776; </button>
+
+            <nav class="menu-mobile">
+                <a href="../index.html#topo">Inicio</a>
+                <a href="../index.html#integrantes">Integrantes</a>
+                <a href="../index.html#sobre">A Crowitch</a>
+                <a href="../index.html#insta">Instagram</a>
+                <a href="../index.html#contratar">Links</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Carrossel -->
+    <section id="topo" class="slider-container">
+
+        <div class="slide active">
+            <img id="foto_logo" class="foto_carrossel" src="../img/jerms.png" alt="Banner da Crowitch">
+        </div>
+
+    </section>
+
+    <!-- História do integrante -->
+    <section id="sobre" class="sobre-secao">
+        
+            <div class="contato">
+                <h1 style="color: white;">Emerson Gomes - Jerms</h1>
+
+                <a id="botao_contratar" target="blank" href="https://www.instagram.com/e.andradeperfil/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+            <p>Guitarrista da Crowitch e faz parte da banda desde sua formação. Influenciado pelo rock alternativo, grunge e outras vertentes do gênero, participa da criação dos arranjos e busca construir, ao lado dos demais integrantes, uma identidade musical própria para a banda.</p>
+            
+            <p>Fora dos palcos, também contribui para o desenvolvimento do projeto em outras áreas, sendo responsável pela criação do site oficial e pela organização da presença digital da Crowitch. Acredita que uma banda independente se fortalece tanto pela música quanto pela forma como apresenta seu trabalho, unindo criatividade, planejamento e dedicação para transformar a Crowitch em um projeto sólido e duradouro.</p>
+            
+    </section>
+
+    <!-- Contratar -->
+    <section id="contratar" >
+        
+        <div id="mensagem_contratar">
+            
+            <a id="botao_contratar" href="https://www.instagram.com/crowitchofc/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        
+            <a id="botao_contratar" href="">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+
+            <a id="botao_contratar" href="https://www.youtube.com/@bandacrowitch">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a id="botao_contratar" href="https://www.tiktok.com/@crowitchoficial">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a id="botao_contratar" href="mailto:bandacrowitch@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <a id="logo_contratar" href="https://www.instagram.com/crowitchofc/"></a>
+
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p id="texto_rodape">&copy; 2026 Crowitch. Todos os direitos reservados.</p>
+
+    </footer>
+
+    
+
+    <!-- Menu Hamburguer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuHamburguer = document.querySelector('.menu-hamburguer');
+            const menuMobile = document.querySelector('.menu-mobile');
+
+            menuHamburguer.addEventListener('click', () => {
+                menuMobile.classList.toggle('active');
+            });
+
+            // Fecha o menu móvel ao clicar em um link (para facilitar a navegação)
+            document.querySelectorAll('.menu-mobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuMobile.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <!-- Carrossel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            // Função para mostrar um slide específico
+            function showSlide(index) {
+                // Remove a classe 'active' de todos os slides
+                slides.forEach(slide => slide.classList.remove('active'));
+
+                // Adiciona a classe 'active' ao slide desejado
+                slides[index].classList.add('active');
+            }
+
+            // Função para ir para o próximo slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Exibe o primeiro slide ao carregar a página
+            showSlide(currentSlide);
+
+            // Define um intervalo para trocar os slides a cada 5 segundos (5000ms)
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+</body>
+
+</html>
