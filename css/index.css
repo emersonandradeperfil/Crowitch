@@ -198,9 +198,9 @@ p, figcaption {
         }
 
         .band-name {
-            /* font-size: 0.9rem;
+            font-size: 0.9rem;
             color: #a4b0be;
-            margin-bottom: 20px; */
+            margin-bottom: 20px;
         }
 
         /* Barra de Progresso */
