@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="icon" href="img/flavicon.png" />
+    <title>Crowitch</title>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div id="cabecalho">
+            <a href="#topo"><div class="logo"></div></a>
+            <nav class="menu-site menu-desktop">
+                
+                <a href="#integrantes">Integrantes</a>
+                <a href="#sobre">A Crowitch</a>
+                <a href="#insta">Instagram</a>
+                <a href="#contratar">Links</a>
+            </nav>
+            
+            <button class="menu-hamburguer" aria-label="Abrir Menu">
+                &#9776; </button>
+
+            <nav class="menu-mobile">
+                <a href="#topo">Inicio</a>
+                <a href="#integrantes">Integrantes</a>
+                <a href="#sobre">A Crowitch</a>
+                <a href="#insta">Instagram</a>
+                <a href="#contratar">Links</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Videos -->
+   <section id="video">
+
+        <div class="galeria-video">
+            <video width="500px" height="300px" controls preload="metadata" poster="">
+                <!-- O navegador tenta carregar o WebM primeiro (ultra leve) -->
+                <source src="vid/teste.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-info">
+                <p>Sessão de gravação da Crowitch</p>
+            </div>
+        </div>
+
+        <div class="galeria-video">
+            <video width="500px" height="300px" controls preload="metadata" poster="">
+                <!-- O navegador tenta carregar o WebM primeiro (ultra leve) -->
+                <source src="vid/teste.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-info">
+                <p>Sessão de gravação da Crowitch</p>
+            </div>
+        </div>
+    
+
+   </section>
+
+    <!-- Contatos -->
+    <section id="contratar" >
+        
+        <div id="mensagem_contratar">
+            
+            <a id="botao_contratar" href="https://www.instagram.com/crowitchofc/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        
+            <a id="botao_contratar" href="">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+
+            <a id="botao_contratar" href="https://www.youtube.com/@bandacrowitch">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a id="botao_contratar" href="https://www.tiktok.com/@crowitchoficial">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a id="botao_contratar" href="mailto:bandacrowitch@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <a id="logo_contratar" href="https://www.instagram.com/crowitchofc/"></a>
+
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p id="texto_rodape">&copy; 2026 Crowitch. Todos os direitos reservados.</p>
+
+    </footer>
+
+    <!-- Menu Hamburguer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuHamburguer = document.querySelector('.menu-hamburguer');
+            const menuMobile = document.querySelector('.menu-mobile');
+
+            menuHamburguer.addEventListener('click', () => {
+                menuMobile.classList.toggle('active');
+            });
+
+            // Fecha o menu móvel ao clicar em um link (para facilitar a navegação)
+            document.querySelectorAll('.menu-mobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuMobile.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
