@@ -23,6 +23,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#video">Videos</a>
                 <a href="#previu">Músicas</a>
+                <a href="#agenda">Agenda</a>
                 
             </nav>
             
@@ -35,6 +36,7 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#video">Videos</a>
                 <a href="#previu">Músicas</a>
+                <a href="#agenda">Agenda</a>
             </nav>
 
         </div>
@@ -246,7 +248,49 @@
 
     </section>
 
+
+    <section class="shows-section" id="agenda">
     
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" id="prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel-container" id="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    
+                    <div class="flyer-card">
+                        <img src="img/flyers/05-09.png" alt="Show em São Paulo" class="flyer-img">
+                    </div>
+
+                    <div class="flyer-card">
+                        <img src="img/flyers/23-08.png" alt="Show no Rio de Janeiro" class="flyer-img">
+                    </div>
+
+                    <div class="flyer-card">
+                        <img src="img/flyers/26-07.png" alt="Festival de Rock" class="flyer-img">
+                    </div>
+
+                    <div class="flyer-card">
+                        <img src="img/flyers/27-6.jpeg" alt="Show Especial" class="flyer-img">
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn next-btn" id="next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <div class="lightbox-modal" id="lightbox">
+        <span class="close-btn" id="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Flyer Ampliado">
+    </div>
+
+
+
 
     <!-- Contatos -->
     <section id="contratar" >
@@ -415,6 +459,50 @@
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
+    </script>
+
+    <script>
+        const track = document.getElementById('carousel-track');
+        const container = document.getElementById('carousel-container');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+
+        // --- LÓGICA DO CARROSSEL ---
+        nextBtn.addEventListener('click', () => {
+            // Calcula a largura de um card + o gap para rolar certinho
+            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20; 
+            container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20;
+            container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        // --- LÓGICA DO LIGHTBOX (ABRIR FOTO GIGANTE) ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-lightbox');
+        const flyers = document.querySelectorAll('.flyer-img');
+
+        flyers.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src; // Passa a imagem clicada para o Modal
+                lightbox.classList.add('active'); // Abre o modal com transição suave
+            });
+        });
+
+        // Fechar ao clicar no 'X'
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Fechar ao clicar fora da imagem (no fundo preto)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
     </script>
 
 </body>
