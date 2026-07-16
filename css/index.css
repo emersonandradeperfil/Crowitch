@@ -248,7 +248,7 @@ p, figcaption {
 
         .btn-play:hover {
             transform: scale(1.1);
-            background-color: white;
+            background-color: #0c4621;
         }
 
         .time-display {
