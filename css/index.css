@@ -1,99 +1,137 @@
 :root {
-
+    /* Cor de texto usada em parágrafos, legendas e no rodapé */
     --cor_texto: #beb7a5;
-
 }
 
 * {
-
+    /* Reset padrão: zera espaçamentos nativos do navegador */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 body {
-
     font-family: sans-serif;
     background-color: black;
-    
 }
 
 p, figcaption {
-
+    /* Cor padrão de textos corridos e legendas de imagem */
     color: var(--cor_texto);
-
 }
 
+/* Cabeçalho */
 #cabecalho {
-
     background-color: black;
     color: white;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 50px;
-
-    position: fixed; 
-    top: 0;          
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
-
 }
 
 .logo {
-
+    /* Logo em imagem de fundo, dentro do link "Início" */
     font-size: 2em;
     font-weight: bold;
     margin-left: 10px;
-
     background-image: url(../img/itens/nome.png);
     height: 90px;
     width: 90px;
     background-size: 100%;
     background-repeat: no-repeat;
-
 }
 
 .menu-site {
-
+    /* Container do menu (usado tanto no menu desktop quanto no mobile) */
     display: flex;
     gap: 20px;
     margin-right: 20px;
-
 }
 
 .menu-site a {
-
     color: var(--cor_texto);
     text-decoration: none;
     font-weight: 600;
-
 }
 
-.foto_carrossel {
-
-    object-fit: cover;
-    object-position: top;
-    display: block;
+/* Menu hamburguer (mobile) */
+.menu-hamburguer, .menu-mobile {
+    display: none;
 }
 
-#foto_logo {
-
-    object-position: center;
-
+.menu-hamburguer {
+    background: none;
+    border: none;
+    color: var(--cor_texto);
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 15px;
 }
 
-#banner{
+.menu-mobile {
+    /* Painel lateral que desliza da direita ao abrir o menu */
+    position: fixed;
+    top: 50px; /* Abaixo do cabeçalho */
+    right: 0;
+    width: 250px;
+    height: calc(100vh - 50px); /* Altura total menos o cabeçalho */
+    background-color: #111;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
 
-    margin-top: 50px;
+    /* Inicialmente oculto fora da tela, com transição suave */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-mobile.active {
+    /* Classe adicionada via JS ao clicar no hamburguer */
+    transform: translateX(0);
+}
+
+.menu-mobile a {
+    color: var(--cor_texto);
+    text-decoration: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    text-align: left;
+}
+
+/* Responsivo: troca o menu desktop pelo menu hamburguer em telas pequenas */
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .menu-mobile {
+        display: flex;
+    }
+
+    #cabecalho {
+        justify-content: space-between;
+    }
+}
+
+/* Foto inicial */
+#banner {
+    margin-top: 50px; /* Compensa o cabeçalho fixo */
     width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;
-    
 }
 
 #banner img {
@@ -103,7 +141,7 @@ p, figcaption {
 }
 
 #banner::after {
-
+    /* Degradê escuro na base da imagem*/
     content: "";
     position: absolute;
     bottom: 0;
@@ -112,30 +150,172 @@ p, figcaption {
     height: 30%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     pointer-events: none;
-
 }
 
-.slider-container {
+/* Integrantes */
+.integrantes-secao {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 
+.fotos-integrantes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+    font-size: 13px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.foto-box {
+    margin-top: 40px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    transition: linear;
+}
+
+.foto-box:hover {
+    transform: scale(1.02);
+}
+
+.foto_integrantes {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.foto-box a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .fotos-integrantes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+/* Sobre a banda */
+.sobre-secao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.sobre-secao p {
+    font-size: 20px;
+}
+
+@media (max-width: 480px) {
+    .sobre-secao p {
+        font-size: 15px;
+    }
+}
+
+/* Carrossel */
+.slider-container {
     margin-bottom: 50px;
     width: 100%;
     height: 80vh;
     overflow: hidden;
     position: relative;
-
 }
 
-#previu{
+.slide {
+    /* Cada slide fica sobreposto (position: absolute) e oculto por padrão */
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
+.slide.active {
+    /* Slide atual, exibido pelo JS do carrossel */
+    display: block;
+    opacity: 1;
+}
+
+.slide.active::after {
+    /* Degradê escuro na base do slide ativo */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto_carrossel {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    object-position: center;
+}
+
+/* Responsivo: carrossel mais baixo em telas bem pequenas */
+@media (max-width: 480px) {
+    .slider-container {
+        height: 40vh;
+    }
+}
+
+/* Videos */
+#video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.galeria-video {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.video-index {
+    height: 300px;
+    width: 350px;
+}
+
+/* Músicas */
+#previu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
-    
 }
 
 .player-container {
-            
     border: 1px solid #333;
     border-radius: 16px;
     padding: 24px;
@@ -143,11 +323,10 @@ p, figcaption {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     text-align: center;
     transition: transform 0.3s ease;
-
 }
 
 .album-art {
-
+    /* Capa do single, em formato circular */
     width: 120px;
     height: 120px;
     background-color: #333;
@@ -158,35 +337,29 @@ p, figcaption {
     align-items: center;
     overflow: hidden;
     border: 3px solid #beb7a5;
-    
 }
 
 .album-art img {
-
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 
 .track-title {
-
     font-size: 1.1rem;
     font-weight: bold;
     margin: 8px 0 4px 0;
     color: #fff;
-
 }
 
 .band-name {
-
     font-size: 0.9rem;
     color: #a4b0be;
     margin-bottom: 20px;
-
 }
 
 .progress-container {
+    /* Trilho clicável da barra de progresso do áudio */
     background-color: #444;
     border-radius: 5px;
     cursor: pointer;
@@ -197,26 +370,33 @@ p, figcaption {
 }
 
 .progress-bar {
-
+    /* Preenchimento da barra, a largura é atualizada via JS conforme o áudio toca */
     background: linear-gradient(90deg, #25d366, #93d1aa);
     border-radius: 5px;
     height: 100%;
     width: 0%;
     transition: width 0.1s linear;
+}
 
+.time-display {
+    /* Tempo atual / duração total, abaixo da barra de progresso */
+    font-size: 0.8rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    padding: 0 2px;
 }
 
 .controls {
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-
 }
 
 .btn-play {
-
     background-color: #25d366;
     border: none;
     color: white;
@@ -229,11 +409,15 @@ p, figcaption {
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease;
-    
 }
 
-.shows-section {
+.btn-play:hover {
+    transform: scale(1.1);
+    background-color: #0c4621;
+}
 
+/* Agenda */
+.shows-section {
     width: 100%;
     max-width: 1000px;
     margin: 50px auto;
@@ -241,60 +425,48 @@ p, figcaption {
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
-
 }
 
 .carousel-wrapper {
-
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .carousel-container {
-
     overflow: hidden;
     width: 90%;
-
 }
 
 .carousel-track {
-
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc(33.333% - 14px); /* 3 fotos no desktop */
     gap: 20px;
     transition: transform 0.4s ease-in-out;
     scroll-behavior: smooth;
-
 }
 
-
 .flyer-card {
-
     background-color: #1e1e1e;
     border: 1px solid #333;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease;
-
 }
 
 .flyer-card img {
-
     width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 3/4;
     object-fit: cover;
-
 }
 
 .nav-btn {
-
+    /* Botões redondos de seta (prev/next) sobre o carrossel */
     background: #25d3651c;
     border: 2px solid #25d366;
     color: #fff;
@@ -311,7 +483,6 @@ p, figcaption {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     z-index: 10;
-
 }
 
 .nav-btn:hover {
@@ -322,8 +493,19 @@ p, figcaption {
 .prev-btn { left: 0; }
 .next-btn { right: 0; }
 
-.lightbox-modal {
+/* Responsivo: 1 flyer por vez no mobile, com mais espaço pras setas */
+@media (max-width: 768px) {
+    .carousel-track {
+        grid-auto-columns: 100%;
+    }
 
+    .carousel-container {
+        width: 80%;
+    }
+}
+
+.lightbox-modal {
+    /* Prévia do flyer */
     display: none;
     position: fixed;
     z-index: 1000;
@@ -336,35 +518,28 @@ p, figcaption {
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-
 }
 
 .lightbox-modal.active {
-
+    /* Classe adicionada via JS ao clicar em um flyer */
     display: flex;
     opacity: 1;
-
 }
 
 .lightbox-content {
-
     max-width: 90%;
     max-height: 85vh;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 71, 87, 0.3);
     transform: scale(0.9);
     transition: transform 0.3s ease;
-
 }
 
 .lightbox-modal.active .lightbox-content {
-
     transform: scale(1);
-
 }
 
 .close-btn {
-
     position: absolute;
     top: 20px;
     right: 30px;
@@ -373,209 +548,29 @@ p, figcaption {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.2s;
-
 }
 
 .close-btn:hover {
-
     color: #ff4757;
-
 }
 
-@media (max-width: 768px) {
-
-    .carousel-track {
-        grid-auto-columns: 100%; /* 1 foto no mobile */
-    }
-
-    .carousel-container {
-        width: 80%; /* Dá mais espaço para as setas no dedão */
-    }
-
-}
-
-.btn-play:hover {
-
-    transform: scale(1.1);
-    background-color: #0c4621;
-
-}
-
-.time-display {
-
-    font-size: 0.8rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    margin-top: -15px;
-    margin-bottom: 15px;
-    padding: 0 2px;
-
-}
-
-.slide {
-
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    
-}
-
-.slide.active {
-
-    display: block;
-    opacity: 1;
-
-}
-
-#video{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0px 20px 0px; 
-
-}
-
-.slide.active::after {
-
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px; /* Controle a altura do degradê aqui */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-    pointer-events: none; /* Garante que o degradê não atrapalhe cliques no slide */
-
-}
-
-.slide img {
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.integrantes-secao {
-    
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    
-}
-
-.fotos-integrantes {
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 1%;
-    font-size: 13px;
-    flex-wrap: wrap;
-    width: 100%;
-    
-}
-
-.foto-box {
-
-    margin-top: 40px;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    font-weight: bold;
-    transition: linear;
-}
-
-.foto-box:hover {
-
-    transform: scale(1.02);
-
-}
-
-.foto_integrantes {
-
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    
-}
-
-.foto-box a {
-
-    text-decoration: none;
-    color: black;
-    text-align: center;
-
-}
-
-.sobre-secao {
-    
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px;
-    padding: 20px;
-
-}
-
-.sobre-secao p {
-
-    font-size: 20px;
-
-}
-
-.galeria-video{
-
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-}
-
-.video-index{
-
-    height: 300px;
-    width: 350px;
-    
-}
-
+/* Contatos */
 #contatos {
-
     background-color: black;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 #espaço_contatos {
-
     display: flex;
-    
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
 }
 
 .botao_contatos {
-
     height: 40px;
     width: 40px;
     background-color: #25d366;
@@ -587,144 +582,44 @@ p, figcaption {
     font-size: 20px;
     color: white;
     font-weight: 600;
-    
-
 }
 
 .botao_contatos:hover {
-
     color: #25d366;
     background-color: white;
     box-shadow: 0px 0px 20px #25d366;
-    
 }
 
 #logo_contatos {
-
     background-image: url(../img/itens/logo.jpeg);
     height: 150px;
     width: 150px;
     background-size: 100%;
     background-repeat: no-repeat;
-
 }
 
-footer {
+/* Responsivo: empilha os ícones/logo em coluna no mobile */
+@media (max-width: 768px) {
+    #contatos {
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 20px;
+        align-items: center;
+    }
+}
 
+/* Rodapé */
+footer {
     background-color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
     width: 100%;
-
 }
 
 #texto_rodape {
-
     color: var(--cor_texto);
-
-}
-
-.menu-hamburguer, .menu-mobile {
-    display: none;
-}
-
-.menu-hamburguer {
-
-    background: none;
-    border: none;
-    color: var(--cor_texto); /* Cor definida na sua root */
-    font-size: 2em;
-    cursor: pointer;
-    margin-right: 15px;
-
-}
-
-.menu-mobile {
-
-    position: fixed;
-    top: 50px; /* Abaixo do cabeçalho */
-    right: 0;
-    width: 250px;
-    height: calc(100vh - 50px); /* Altura total menos o cabeçalho */
-    background-color: #111; /* Fundo escuro */
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    
-    /* Inicialmente oculto com transição suave */
-    transform: translateX(100%); 
-    transition: transform 0.3s ease-in-out;
-
-}
-
-.menu-mobile.active {
-    transform: translateX(0);
-}
-
-.menu-mobile a {
-
-    color: var(--cor_texto);
-    text-decoration: none;
-    padding: 15px 0;
-    border-bottom: 1px solid #333;
-    width: 100%;
-    text-align: left;
-
-}
-
-@media (max-width: 768px) {
-    
-    /* Oculta o menu de desktop e mostra o menu hamburguer */
-    .menu-desktop {
-        display: none;
-    }
-
-    .menu-hamburguer {
-        display: block;
-    }
-    
-    .menu-mobile {
-        display: flex;
-    }
-
-    /* Ajusta a exibição dos Integrantes para mobile */
-    .fotos-integrantes {
-        
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 50px;
-    }
-
-    /* Garante que o cabeçalho preencha a tela */
-    #cabecalho {
-        justify-content: space-between;
-    }
-
-    #contratar {
-
-        background-color:rgb(0, 0, 0);
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        padding: 20px;
-        align-items: center;
-    
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    /* Ajuste de altura Específico para Mobile */
-    .slider-container {
-        height: 40vh;
-    }
-    
-    .sobre-secao p {
-        font-size: 15px;
-    }
-
 }
