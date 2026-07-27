@@ -68,7 +68,7 @@ p, figcaption {
     font-weight: bold;
     margin-left: 10px;
 
-    background-image: url(../img/nome.png);
+    background-image: url(../img/itens/nome.png);
     height: 90px;
     width: 90px;
     background-size: 100%;
@@ -627,7 +627,7 @@ p, figcaption {
 
 #logo_contratar {
 
-    background-image: url(../img/logo.jpeg);
+    background-image: url(../img/itens/logo.jpeg);
     height: 150px;
     width: 150px;
     background-size: 100%;
