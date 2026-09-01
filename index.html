@@ -98,7 +98,7 @@
 
         <p>A Crowitch é uma banda autoral de rock alternativo formada por músicos de São Paulo e Guarulhos.</p>
 
-        <p>Com influências do grunge e do rock nacional, a banda nasceu da união de músicos com diferentes experiências
+        <p>Com influências do grunge e do metal, a banda nasceu da união de músicos com diferentes experiências
             na cena do rock, movidos pela vontade de criar músicas próprias e construir uma identidade musical. O
             projeto representa uma nova fase para seus integrantes, que deixaram de lado outros caminhos para investir
             em um repertório totalmente autoral.</p>
@@ -109,6 +109,8 @@
         </p>
 
     </section>
+
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/2nyb6GimSsOU0MnZJmjGYv?utm_source=generator&theme=0&si=1b7c90299b2a4947" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
     <!-- Carrossel -->
     <section id="topo" class="slider-container">
@@ -134,32 +136,71 @@
     <!-- Player de videos -->
     <section id="video">
 
-        <div class="galeria-video">
+        <h2 class="titulo">Registro de Shows</h2>
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre5.png">
-                <source src="vid/5.mp4" type="video/mp4">
-            </video>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" aria-label="Vídeo anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre6.png">
-                <source src="vid/6.mp4" type="video/mp4">
-            </video>
+            <div class="carousel-container">
+                <div class="carousel-track">
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre1.png">
-                <source src="vid/1.mp4" type="video/mp4">
-            </video>
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre5.png">
+                            <source src="vid/5.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">Olhos brancos</p>
+                        <p class="legenda">Fábrica de cultura - Cidade Tiradentes </p>
+                    </div>
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre2.png">
-                <source src="vid/2.mp4" type="video/mp4">
-            </video>
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre6.png">
+                            <source src="vid/6.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">Até o fim</p>
+                        <p class="legenda">Fábrica de cultura - Cidade Tiradentes </p>
+                    </div>
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre3.png">
-                <source src="vid/3.mp4" type="video/mp4">
-            </video>
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre1.png">
+                            <source src="vid/1.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">A cura</p>
+                        <p class="legenda">Silsi Rock Tatoo Bar - São Miguel</p>
+                    </div>
 
-            <video class="video-index" controls preload="metadata" poster="vid/pre4.png">
-                <source src="vid/4.mp4" type="video/mp4">
-            </video>
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre2.png">
+                            <source src="vid/2.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">A minha inocência</p>
+                        <p class="legenda">Bar 3ª Divisão - Cidade Tiradentes</p>
+                    </div>
 
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre3.png">
+                            <source src="vid/3.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">Get out</p>
+                        <p class="legenda">Ensaio na casa do Marcelo Lombardo</p>
+                    </div>
+
+                    <div class="video-card">
+                        <video class="video-index" controls preload="metadata" poster="vid/pre4.png">
+                            <source src="vid/4.mp4" type="video/mp4">
+                        </video>
+                        <p class="legenda">Olhos brancos</p>
+                        <p class="legenda">Gravação nas Fabricas de Cultura</p>
+                        <p class="legenda">Itaim Paulista e Belém</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="nav-btn next-btn" aria-label="Próximo vídeo">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
 
     </section>
@@ -167,70 +208,88 @@
     <!-- Player de musica -->
     <section id="previu">
 
-        <div class="player-container">
-            <audio class="audio-preview" src="aud/cura.mp3"></audio>
-            <div class="album-art">
-                <img src="img/capas/capa1.jpeg" alt="Capa 1">
-            </div>
-            <div class="track-title">A cura</div>
-            <div class="band-name">Prévia</div>
+        <h2 class="titulo">Próximas músicas</h2>
 
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="time-display">
-                <span class="current-time">0:00</span>
-                <span class="duration">0:00</span>
-            </div>
-            <div class="controls">
-                <button class="btn-play">
-                    <i class="fas fa-play play-icon"></i>
-                </button>
-            </div>
-        </div>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" aria-label="Música anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-        <div class="player-container">
-            <audio class="audio-preview" src="aud/olhos.mp3"></audio>
-            <div class="album-art">
-                <img src="img/capas/capa2.jpeg" alt="Capa 2">
-            </div>
-            <div class="track-title">Olhos brancos</div>
-            <div class="band-name">Prévia</div>
+            <div class="carousel-container">
+                <div class="carousel-track">
 
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="time-display">
-                <span class="current-time">0:00</span>
-                <span class="duration">0:00</span>
-            </div>
-            <div class="controls">
-                <button class="btn-play">
-                    <i class="fas fa-play play-icon"></i>
-                </button>
-            </div>
-        </div>
+                    <div class="player-container">
+                        <audio class="audio-preview" src="aud/vida.mp3"></audio>
+                        <div class="album-art">
+                            <img src="img/capas/capa3.jpeg" alt="Capa 3">
+                        </div>
+                        <div class="track-title">Vida de louco</div>
+                        <div class="band-name">Prévia</div>
 
-        <div class="player-container">
-            <audio class="audio-preview" src="aud/vida.mp3"></audio>
-            <div class="album-art">
-                <img src="img/capas/capa3.jpeg" alt="Capa 3">
-            </div>
-            <div class="track-title">Vida de louco</div>
-            <div class="band-name">Prévia</div>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">
+                            <span class="current-time">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                        <div class="controls">
+                            <button class="btn-play">
+                                <i class="fas fa-play play-icon"></i>
+                            </button>
+                        </div>
+                    </div>
 
-            <div class="progress-container">
-                <div class="progress-bar"></div>
+                    <div class="player-container">
+                        <audio class="audio-preview" src="aud/olhos.mp3"></audio>
+                        <div class="album-art">
+                            <img src="img/capas/capa2.jpeg" alt="Capa 2">
+                        </div>
+                        <div class="track-title">Olhos brancos</div>
+                        <div class="band-name">Prévia</div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">
+                            <span class="current-time">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                        <div class="controls">
+                            <button class="btn-play">
+                                <i class="fas fa-play play-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="player-container">
+                        <audio class="audio-preview" src="aud/minha.mp3"></audio>
+                        <div class="album-art">
+                            <img src="img/capas/capa4.jpg" alt="Capa 2">
+                        </div>
+                        <div class="track-title">A minha inocência</div>
+                        <div class="band-name">Prévia</div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">
+                            <span class="current-time">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                        <div class="controls">
+                            <button class="btn-play">
+                                <i class="fas fa-play play-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="time-display">
-                <span class="current-time">0:00</span>
-                <span class="duration">0:00</span>
-            </div>
-            <div class="controls">
-                <button class="btn-play">
-                    <i class="fas fa-play play-icon"></i>
-                </button>
-            </div>
+
+            <button class="nav-btn next-btn" aria-label="Próxima música">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
 
     </section>
@@ -238,14 +297,16 @@
     <!-- Agenda -->
     <section class="shows-section" id="agenda">
 
+        <h2 class="titulo">Agenda</h2>
+        <br>
         <div class="carousel-wrapper">
-            <button class="nav-btn prev-btn" id="prev-slide">
+            <button class="nav-btn prev-btn" aria-label="Flyer anterior">
                 <i class="fas fa-chevron-left"></i>
             </button>
 
             <!-- Flyers -->
-            <div class="carousel-container" id="carousel-container">
-                <div class="carousel-track" id="carousel-track">
+            <div class="carousel-container">
+                <div class="carousel-track">
 
                     <div class="flyer-card">
                         <img src="img/flyers/05-09.png" alt="Fabria do belém" class="flyer-img">
@@ -270,7 +331,7 @@
                 </div>
             </div>
 
-            <button class="nav-btn next-btn" id="next-slide">
+            <button class="nav-btn next-btn" aria-label="Próximo flyer">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
@@ -369,21 +430,23 @@
     </script>
 
     <script>
-        const track = document.getElementById('carousel-track');
-        const container = document.getElementById('carousel-container');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
+        // --- LÓGICA DO CARROSSEL (funciona pra qualquer seção que use .carousel-wrapper) ---
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const track = wrapper.querySelector('.carousel-track');
+            const container = wrapper.querySelector('.carousel-container');
+            const prevBtn = wrapper.querySelector('.prev-btn');
+            const nextBtn = wrapper.querySelector('.next-btn');
 
-        // --- LÓGICA DO CARROSSEL ---
-        nextBtn.addEventListener('click', () => {
-            // Calcula a largura de um card + o gap para rolar certinho
-            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20;
-            container.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        });
+            nextBtn.addEventListener('click', () => {
+                // Calcula a largura de um card + o gap para rolar certinho
+                const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20;
+                container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
 
-        prevBtn.addEventListener('click', () => {
-            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20;
-            container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            prevBtn.addEventListener('click', () => {
+                const cardWidth = track.firstElementChild.getBoundingClientRect().width + 20;
+                container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
         });
 
         // --- LÓGICA DO LIGHTBOX (ABRIR FOTO GIGANTE) ---
@@ -416,7 +479,6 @@
     <script>
         // Seleciona todos os players da página
         const players = document.querySelectorAll('.player-container');
-
         players.forEach(player => {
             const audio = player.querySelector('.audio-preview');
             const btnPlay = player.querySelector('.btn-play');
@@ -493,6 +555,21 @@
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
+    </script>
+
+    <!-- Pausa os outros vídeos quando um começa a tocar -->
+    <script>
+        const videos = document.querySelectorAll('.video-index');
+
+        videos.forEach(video => {
+            video.addEventListener('play', () => {
+                videos.forEach(otherVideo => {
+                    if (otherVideo !== video) {
+                        otherVideo.pause();
+                    }
+                });
+            });
+        });
     </script>
 
 </body>

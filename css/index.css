@@ -152,6 +152,20 @@ p, figcaption {
     pointer-events: none;
 }
 
+.titulo{
+
+    color: var(--cor_texto);
+    text-align: center;
+
+}
+
+.legenda{
+
+    color: var(--cor_texto);
+    text-align: center;
+
+}
+
 /* Integrantes */
 .integrantes-secao {
     margin-top: 20px;
@@ -289,22 +303,7 @@ p, figcaption {
 
 /* Videos */
 #video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 20px 0px 20px 0px;
-}
-
-.galeria-video {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.video-index {
-    height: 300px;
-    width: 350px;
 }
 
 /* Músicas */
@@ -492,6 +491,32 @@ p, figcaption {
 
 .prev-btn { left: 0; }
 .next-btn { right: 0; }
+
+/* Faz o wrapper do carrossel ocupar toda a largura da seção (usado em Vídeos, Músicas e Agenda) */
+.carousel-wrapper {
+    width: 100%;
+}
+
+/* Ajusta os vídeos pra preencherem a coluna do carrossel */
+.carousel-track .video-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel-track .video-index {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 7 / 6;
+    border-radius: 8px;
+}
+
+/* Centraliza o player de música dentro da coluna do carrossel */
+.carousel-track .player-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
 
 /* Responsivo: 1 flyer por vez no mobile, com mais espaço pras setas */
 @media (max-width: 768px) {
