@@ -387,6 +387,16 @@ footer {
     text-align: left;
 }
 
+#imprensa {
+
+    display: flex; gap: 50px;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    margin: 60px 10px 60px 10px; 
+    flex-direction: row;
+
+}
+
 @media (max-width: 768px) {
     
     /* Oculta o menu de desktop e mostra o menu hamburguer */
@@ -434,6 +444,12 @@ footer {
     
 }
 
+    #imprensa {
+
+        flex-direction: column;
+
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -459,5 +475,11 @@ footer {
     font-size: 15px;
 
 }
+
+    #imprensa {
+
+        flex-direction: column;
+
+    }
 
 }
